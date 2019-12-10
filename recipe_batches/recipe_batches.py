@@ -4,8 +4,7 @@ import math
 
 
 def recipe_batches(recipe, ingredients):
-    batches = [math.floor(ingredients.get(key)/value) if (ingredients.get(key)) else 0 for key, value in recipe.items()]
-    print(batches)
+    batches = [math.floor(ingredients.get(key)/value) if(ingredients.get(key)) else 0 for key, value in recipe.items()]
     batches.sort()
     return batches[0]
 
