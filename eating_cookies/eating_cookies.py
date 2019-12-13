@@ -2,8 +2,6 @@
 
 import sys
 
-cache = {}
-
 
 # The cache parameter is here for if you want to implement
 # a solution that is more efficient than the naive
@@ -11,20 +9,19 @@ cache = {}
 def eating_cookies(n):
     cache = {}
 
-    def number_of_ways(n):
-        if (n<0):
-            return 0
-        elif (n == 0):
+    def eat_cookie(val):
+        if (val == 0):
             return 1
-        elif (n not in cache):
-            various_ways = number_of_ways(n-1) + number_of_ways(n-2)
-            + number_of_ways(n-3)
-            cache[n] = various_ways
-        return cache[n]
-    return number_of_ways(n)
+        if (val < 0):
+            return 0
+        if (val not in cache):
+            ways = eat_cookie(val-1) + eat_cookie(val-2) + eat_cookie(val-3)
+            cache[val] = ways
+        return cache[val]
+    return eat_cookie(n)
 
 
-print(eating_cookies(4))
+# print(eating_cookies(10))
 
 # if __name__ == "__main__":
 #     if len(sys.argv) > 1:
