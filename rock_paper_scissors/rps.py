@@ -15,15 +15,15 @@ def rock_paper_scissors(n):
         # return [[r] + x for r in rps for x in rock_paper_scissors(n-1)]
         total = []
         for r in rps:
-            print(f'Value of r from rps is {r}')
+            # print(f'Value of r from rps is {r}')
             for x in rock_paper_scissors(n-1):
-                print(f'Value of x from rock_paper_Scisssors is {x}')
+                # print(f'Value of x from rock_paper_Scisssors is {x}')
                 # print([r] + x)
                 total.append([r]+x)
         return total
 
 
-print(rock_paper_scissors(3))
+# print(rock_paper_scissors(3))
 
 # if __name__ == "__main__":
 #     if len(sys.argv) > 1:
